@@ -1001,7 +1001,7 @@ const DATABASE = {
                     "id": 4,
                     "question": "Khi kiểm tra chức năng Hệ tim mạch trong vận động mới đánh giá được chức năng tim mạch có đáp ứng được nhu cầu cung cấp _______ cho hoạt động hay không?",
                     "options": ["Lượng oxy", "Vận động và thích ứng", "Năng lượng", "Dinh dưỡng và dưỡng khí"],
-                    "correctAnswer": 3,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
@@ -1150,7 +1150,7 @@ const DATABASE = {
                         "Tay trái đặt chéo lên tay phải ở 1/3 dưới xương ức",
                         "Tay trái đặt chéo lên tay phải đặt ở 1/2 tại xương ức"
                     ],
-                    "correctAnswer": 1,
+                    "correctAnswer": 2,
                     "explanation": ""
                 }
             ]
