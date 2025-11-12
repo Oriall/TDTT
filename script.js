@@ -891,7 +891,7 @@ const DATABASE = {
                     "id": 13,
                     "question": "Mỡ là chất có giá trị cung cấp năng lượng rất cao, 1 gam mỡ khi phân giải cung cấp bao nhiêu kcal?",
                     "options": ["4,1 kcal", "4,3 kcal", "9,3 kcal", "5,1 kcal"],
-                    "correctAnswer": 2,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
