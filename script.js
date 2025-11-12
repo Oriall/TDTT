@@ -904,7 +904,7 @@ const DATABASE = {
                         "Kéo dãn cơ tối đa theo chiều ngược lại cho đến khi không co lại được nữa và xoa bóp",
                         "Kéo giãn cơ theo chiều ngược lại cho đến khi không co lại được nữa và xoa bóp"
                     ],
-                    "correctAnswer": 4,
+                    "correctAnswer": 3,
                     "explanation": ""
                 },
                 {
