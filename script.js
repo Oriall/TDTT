@@ -204,13 +204,13 @@ const DATABASE = {
                     "id": 4,
                     "question": "Sau khi kiểm tra các chức năng hoạt động của các cơ quan trong cơ thể, chức năng nào sau đây quyết định đến khả năng vận động và khả năng thích ứng của cơ thể với vận động?",
                     "options": ["Chức năng hệ tim mạch", "Chức năng hệ hô hấp", "Chức năng hệ trao đổi chất", "Chức năng hệ thần kinh"],
-                    "correctAnswer": 0,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
                     "id": 5,
-                    "question": "Hãy điền từ còn khuyết để hoàn thiện khái niệm về giáo dục Sức nhanh trong các tố chất thể lực của TDTT? Sức nhanh là một tổ hợp thuộc tính chức năng của con người. Nó quy định chủ yếu và trực tiếp đặc tính tốc độ _______ Động tác _______ cũng như thời gian phản ứng vận động.",
-                    "options": ["thực hiện", "hoàn thành", "di chuyển", "vận động"],
+                    "question": "Hãy điền từ còn khuyết để hoàn thiện khái niệm về giáo dục Sức nhanh trong các tố chất thể lực của TDTT? Sức nhanh là một tổ hợp thuộc tính chức năng của con người. Nó quy định chủ yếu và trực tiếp đặc tính tốc độ ______________ cũng như thời gian phản ứng vận động.",
+                    "options": ["động tác", "hoàn thành", "di chuyển", "vận động"],
                     "correctAnswer": 0,
                     "explanation": "Từ khuyết cần điền là 'thực hiện'"
                 },
@@ -218,7 +218,7 @@ const DATABASE = {
                     "id": 6,
                     "question": "Nhu cầu 'nước' của một người trong một ngày khoảng bao nhiêu lít nước?",
                     "options": ["1 - 1,5 lít", "1,5 – 2 lít", "2 – 2,5 lít", "2,5 – 3 lít"],
-                    "correctAnswer": 2,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
@@ -287,7 +287,7 @@ const DATABASE = {
                     "id": 13,
                     "question": "Chỉ số sinh lý đặc trưng cho hoạt động của hệ hô hấp là tần số hô hấp. Ở người khi tham gia tập luyện TDTT, tần số hô hấp khoảng bao nhiêu?",
                     "options": ["20 – 30 lần/phút", "25 – 35 lần/phút", "30 – 40 lần/phút", "35 – 45 lần/phút"],
-                    "correctAnswer": 1,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
@@ -412,7 +412,7 @@ const DATABASE = {
                         "Hiện tượng hạ đường huyết",
                         "Hiện tượng choáng trọng lực"
                     ],
-                    "correctAnswer": 1,
+                    "correctAnswer": 3,
                     "explanation": ""
                 },
                 {
@@ -463,7 +463,7 @@ const DATABASE = {
                         "Khớp gối, khớp cổ tay, khớp vai, khớp khuỷu, khớp ngón tay cái, khớp cổ chân",
                         "Khớp gối, khớp cổ tay, khớp vai, khớp khuỷu, khớp cổ chân"
                     ],
-                    "correctAnswer": 3,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
@@ -534,7 +534,7 @@ const DATABASE = {
                         "Do lười vận động – do chế độ ăn uống – do môi trường sống – do hệ miễn dịch kém",
                         "Do lười vận động – do chế độ ăn uống – do gen di truyền – do môi trường sống – do hệ miễn dịch kém"
                     ],
-                    "correctAnswer": 4,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
@@ -560,7 +560,7 @@ const DATABASE = {
                         "Băng bó cầm máu, bất động chỗ bị gãy bằng nẹp, ủ ấm, chuyển nạn nhân đi bệnh viện",
                         "Bất động chỗ bị gãy bằng nẹp, ủ ấm cho nạn nhân rồi chuyển nạn nhân đi bệnh viện"
                     ],
-                    "correctAnswer": 2,
+                    "correctAnswer": 0,
                     "explanation": ""
                 }
             ]
@@ -637,7 +637,7 @@ const DATABASE = {
                     "id": 8,
                     "question": "Sự ra đời của TDTT được lịch sử TDTT ghi nhận trong chế độ xã hội nào?",
                     "options": ["Xã hội nguyên thủy", "Xã hội chiếm hữu nô lệ", "Xã hội phong kiến", "Xã hội tư bản"],
-                    "correctAnswer": 0,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
@@ -650,7 +650,7 @@ const DATABASE = {
                         "Khớp gối, khớp cổ tay, khớp vai, khớp khuỷu, khớp ngón tay cái, khớp cổ chân",
                         "Khớp gối, khớp cổ tay, khớp vai, khớp khuỷu, khớp cổ chân"
                     ],
-                    "correctAnswer": 3,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
@@ -695,7 +695,7 @@ const DATABASE = {
                         "Hiện tượng hạ đường huyết",
                         "Hiện tượng choáng trọng lực"
                     ],
-                    "correctAnswer": 1,
+                    "correctAnswer": 3,
                     "explanation": ""
                 },
                 {
@@ -834,14 +834,14 @@ const DATABASE = {
                         "Hiện tượng hạ đường huyết",
                         "Hiện tượng choáng trọng lực"
                     ],
-                    "correctAnswer": 1,
+                    "correctAnswer": 3,
                     "explanation": ""
                 },
                 {
                     "id": 8,
                     "question": "Việt Nam tham gia đấu trường Olympic lần đầu tiên vào năm nào?",
                     "options": ["1972", "1976", "1980", "1984"],
-                    "correctAnswer": 0,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
@@ -1015,7 +1015,7 @@ const DATABASE = {
                     "id": 6,
                     "question": "Nhu cầu 'nước' của một người trong một ngày khoảng bao nhiêu lít nước?",
                     "options": ["1 - 1,5 lít", "1,5 – 2 lít", "2 – 2,5 lít", "2,5 – 3 lít"],
-                    "correctAnswer": 2,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
@@ -1040,7 +1040,7 @@ const DATABASE = {
                         "Olympic 1980 tại Mát-xcơ-va (Nga)",
                         "Olympic 1984 tại Los Angeles (Mỹ)"
                     ],
-                    "correctAnswer": 0,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
@@ -1052,14 +1052,14 @@ const DATABASE = {
                         "Khớp khuỷu, khớp vai, khớp ngón tay",
                         "Khớp khuỷu, khớp vai, khớp ngón tay cái"
                     ],
-                    "correctAnswer": 1,
+                    "correctAnswer": 3,
                     "explanation": ""
                 },
                 {
                     "id": 10,
                     "question": "Anh (chị) hãy cho biết có mấy nguyên tắc tập luyện TDTT?",
                     "options": ["4", "5", "6", "7"],
-                    "correctAnswer": 0,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
