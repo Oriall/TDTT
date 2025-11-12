@@ -197,7 +197,7 @@ const DATABASE = {
                         "Sự khát khao vươn tới đẳng cấp TDTT",
                         "Nhận thức hứng thú về TDTT + C"
                     ],
-                    "correctAnswer": 3,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
@@ -242,7 +242,7 @@ const DATABASE = {
                         "Olympic 1980 tại Mát-xcơ-va (Nga)",
                         "Olympic 1984 tại Los Angeles (Mỹ)"
                     ],
-                    "correctAnswer": 0,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
@@ -280,7 +280,7 @@ const DATABASE = {
                         "Bài tập chạy dưới 6 phút",
                         "Bài tập chạy dưới 8 phút"
                     ],
-                    "correctAnswer": 1,
+                    "correctAnswer": 0,
                     "explanation": ""
                 },
                 {
@@ -450,7 +450,7 @@ const DATABASE = {
                     "id": 9,
                     "question": "Sự ra đời của TDTT được lịch sử TDTT ghi nhận trong chế độ xã hội nào?",
                     "options": ["Xã hội nguyên thủy", "Xã hội chiếm hữu nô lệ", "Xã hội phong kiến", "Xã hội tư bản"],
-                    "correctAnswer": 0,
+                    "correctAnswer": 1,
                     "explanation": ""
                 },
                 {
@@ -916,7 +916,7 @@ const DATABASE = {
                         "Chỉ dùng băng thấm cồn lau sạch từ mép vết thương ra xung quanh rồi băng lại",
                         "Chỉ dùng băng thấm cồn lau sạch từ mép vết thương ra xung quanh rồi ga rô lại"
                     ],
-                    "correctAnswer": 0,
+                    "correctAnswer": 2,
                     "explanation": ""
                 },
                 {
