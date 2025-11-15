@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - Lý Luận GDTC</title>
+    <title>Quiz - Hệ Thống Đa Môn Học</title>
     <link rel="shortcut icon" href="./img/Neko_Gojo_sensei-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
@@ -20,7 +20,7 @@
         <!-- Subject Selection Screen -->
         <div class="subject-selection-screen" id="subjectSelectionScreen">
             <h2>Chọn môn học của bạn</h2>
-            <p>Vui lòng chọn một môn học để bắt đầu làm quiz</p>
+            <p>Vui lòng chọn một môn học để bắt đầu</p>
 
             <div class="subject-cards" id="subjectCards">
                 <!-- Subject cards will be generated dynamically -->
@@ -31,8 +31,77 @@
             </button>
         </div>
 
-        <!-- Start Screen -->
-        <div class="start-screen" id="startScreen">
+        <!-- Mode Selection Screen -->
+        <div class="mode-selection-screen hidden" id="modeSelectionScreen">
+            <div class="selected-subject-info">
+                <h3 id="modeSelectedSubjectName">📚 Môn học đã chọn</h3>
+                <p id="modeSelectedSubjectDetails" style="margin: 0; color: #94a3b8;"></p>
+            </div>
+
+            <h2>Chọn chế độ học tập</h2>
+            <p>Bạn muốn ôn tập hay làm bài kiểm tra?</p>
+
+            <div class="mode-cards">
+                <div class="mode-card review-mode" onclick="startReviewMode()">
+                    <div class="mode-icon">📖</div>
+                    <div class="mode-name">Chế Độ Ôn Tập</div>
+                    <div class="mode-description">Xem trước tất cả câu hỏi và đáp án</div>
+                    <ul class="mode-features">
+                        <li>✓ Xem toàn bộ câu hỏi</li>
+                        <li>✓ Tìm kiếm câu hỏi</li>
+                        <li>✓ Hiển thị đáp án và giải thích</li>
+                        <li>✓ Không giới hạn thời gian</li>
+                    </ul>
+                </div>
+
+                <div class="mode-card quiz-mode" onclick="startQuizMode()">
+                    <div class="mode-icon">📝</div>
+                    <div class="mode-name">Chế Độ Kiểm Tra</div>
+                    <div class="mode-description">Làm bài kiểm tra đầy đủ</div>
+                    <ul class="mode-features">
+                        <li>✓ Tùy chỉnh số câu hỏi</li>
+                        <li>✓ Giới hạn thời gian</li>
+                        <li>✓ Chấm điểm tự động</li>
+                        <li>✓ Xem lại chi tiết sau khi nộp</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <button class="btn btn-secondary" onclick="backToSubjectSelection()">← Chọn Lại Môn</button>
+            </div>
+        </div>
+
+        <!-- Review Mode Screen -->
+        <div class="review-screen hidden" id="reviewScreen">
+            <div class="review-header-section">
+                <h2>📖 Chế Độ Ôn Tập</h2>
+                <p id="reviewSubjectInfo"></p>
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm câu hỏi..." 
+                           oninput="filterReviewQuestions()">
+                    <button class="btn btn-secondary" onclick="clearSearch()">Xóa</button>
+                </div>
+                <div class="search-info" id="searchInfo">
+                    Hiển thị <span id="filteredCount">0</span> / <span id="totalCount">0</span> câu hỏi
+                </div>
+            </div>
+
+            <div class="review-questions-container" id="reviewQuestionsContainer">
+                <!-- Review questions will be generated dynamically -->
+            </div>
+
+            <div class="review-actions">
+                <button class="btn btn-secondary" onclick="backToModeSelection()">← Quay Lại</button>
+                <button class="btn btn-primary" onclick="startQuizMode()">Chuyển Sang Kiểm Tra 📝</button>
+            </div>
+        </div>
+
+        <!-- Quiz Settings Screen -->
+        <div class="start-screen hidden" id="startScreen">
             <div class="selected-subject-info">
                 <h3 id="selectedSubjectName">📚 Môn học đã chọn</h3>
                 <p id="selectedSubjectDetails" style="margin: 0; color: #94a3b8;"></p>
@@ -50,13 +119,13 @@
             </div>
 
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-secondary" onclick="backToSubjectSelection()">← Chọn Lại Môn</button>
+                <button class="btn btn-secondary" onclick="backToModeSelection()">← Quay Lại</button>
                 <button class="btn btn-primary" onclick="startQuiz()">Bắt Đầu Quiz</button>
             </div>
         </div>
 
         <!-- Quiz Screen -->
-        <div class="quiz-screen" id="quizScreen">
+        <div class="quiz-screen hidden" id="quizScreen">
             <div class="quiz-header">
                 <div class="progress-info">
                     <div class="question-counter">
@@ -85,7 +154,7 @@
         </div>
 
         <!-- Result Screen -->
-        <div class="result-screen" id="resultScreen">
+        <div class="result-screen hidden" id="resultScreen">
             <div class="result-card">
                 <div class="result-score" id="scoreDisplay"></div>
                 <div class="result-message" id="resultMessage"></div>

@@ -1812,6 +1812,7 @@ const DATABASES = {
 let selectedSubject = null;
 let currentDatabase = null;
 let allQuestions = [];
+let filteredReviewQuestions = [];
 let currentQuestions = [];
 let currentQuestionIndex = 0;
 let userAnswers = [];
@@ -1840,16 +1841,17 @@ function initializeSubjectCards() {
         const totalQuestions = db.exams.reduce((sum, exam) => sum + exam.questions.length, 0);
 
         card.innerHTML = `
-                    <div class="subject-icon">${subjectIcons[subjectKey] || '📖'}</div>
-                    <div class="subject-name">${db.quizMetadata.subject}</div>
-                    <div class="subject-info">📝 ${totalQuestions} câu hỏi</div>
-                    <div class="subject-info">⏱️ ${db.quizMetadata.timeLimit} phút</div>
-                    <div class="subject-info">📋 ${db.quizMetadata.totalExams} đề thi</div>
-                `;
+            <div class="subject-icon">${subjectIcons[subjectKey] || '📖'}</div>
+            <div class="subject-name">${db.quizMetadata.subject}</div>
+            <div class="subject-info">📝 ${totalQuestions} câu hỏi</div>
+            <div class="subject-info">⏱️ ${db.quizMetadata.timeLimit} phút</div>
+            <div class="subject-info">📋 ${db.quizMetadata.totalExams} đề thi</div>
+        `;
 
         subjectCardsContainer.appendChild(card);
     });
 }
+
 function selectSubject(subjectKey) {
     // Remove selected class from all cards
     document.querySelectorAll('.subject-card').forEach(card => {
@@ -1862,40 +1864,43 @@ function selectSubject(subjectKey) {
     selectedSubject = subjectKey;
     currentDatabase = DATABASES[subjectKey];
 
+    // Initialize all questions
+    initializeQuestions();
+
     // Show confirm button
     document.getElementById('confirmSubjectBtn').style.display = 'inline-block';
 }
 
-// Xác nhận môn học
+// Xác nhận môn học và chuyển sang màn hình chọn chế độ
 function confirmSubject() {
     if (!selectedSubject) {
         alert('Vui lòng chọn một môn học!');
         return;
     }
 
-    // Update start screen with subject info
-    document.getElementById('selectedSubjectName').textContent =
+    // Update mode selection screen with subject info
+    document.getElementById('modeSelectedSubjectName').textContent =
         `📚 ${currentDatabase.quizMetadata.subject}`;
 
-    const totalQuestions = currentDatabase.exams.reduce((sum, exam) => sum + exam.questions.length, 0);
-    document.getElementById('selectedSubjectDetails').textContent =
+    const totalQuestions = allQuestions.length;
+    document.getElementById('modeSelectedSubjectDetails').textContent =
         `${totalQuestions} câu hỏi • ${currentDatabase.quizMetadata.totalExams} đề thi`;
-
-    // Set default time limit from database
-    document.getElementById('timeLimit').value = currentDatabase.quizMetadata.timeLimit;
 
     // Switch screens
     document.getElementById('subjectSelectionScreen').style.display = 'none';
-    document.getElementById('startScreen').style.display = 'block';
+    document.getElementById('modeSelectionScreen').classList.remove('hidden');
 }
 
 // Quay lại chọn môn
 function backToSubjectSelection() {
     selectedSubject = null;
     currentDatabase = null;
+    allQuestions = [];
 
-    document.getElementById('startScreen').style.display = 'none';
-    document.getElementById('resultScreen').style.display = 'none';
+    document.getElementById('startScreen').classList.add('hidden');
+    document.getElementById('resultScreen').classList.add('hidden');
+    document.getElementById('modeSelectionScreen').classList.add('hidden');
+    document.getElementById('reviewScreen').classList.add('hidden');
     document.getElementById('subjectSelectionScreen').style.display = 'block';
 
     // Reset selection
@@ -1903,6 +1908,140 @@ function backToSubjectSelection() {
         card.classList.remove('selected');
     });
     document.getElementById('confirmSubjectBtn').style.display = 'none';
+}
+
+// Quay lại chọn chế độ
+function backToModeSelection() {
+    document.getElementById('startScreen').classList.add('hidden');
+    document.getElementById('reviewScreen').classList.add('hidden');
+    document.getElementById('quizScreen').classList.add('hidden');
+    document.getElementById('modeSelectionScreen').classList.remove('hidden');
+}
+
+// Bắt đầu chế độ ôn tập
+function startReviewMode() {
+    document.getElementById('modeSelectionScreen').classList.add('hidden');
+    document.getElementById('reviewScreen').classList.remove('hidden');
+
+    // Update review screen info
+    document.getElementById('reviewSubjectInfo').textContent =
+        `${currentDatabase.quizMetadata.subject} - ${allQuestions.length} câu hỏi`;
+
+    // Display all questions
+    filteredReviewQuestions = [...allQuestions];
+    displayReviewQuestions();
+}
+
+// Hiển thị câu hỏi ôn tập
+function displayReviewQuestions() {
+    const container = document.getElementById('reviewQuestionsContainer');
+    container.innerHTML = '';
+
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+    filteredReviewQuestions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'review-question-item';
+        questionDiv.id = `review-q-${index}`;
+
+        let optionsHTML = '';
+        question.options.forEach((option, optIndex) => {
+            const isCorrect = optIndex === question.correctAnswer;
+            optionsHTML += `
+                <div class="review-option-item ${isCorrect ? 'correct-answer' : ''}" id="review-opt-${index}-${optIndex}">
+                    <span class="review-option-letter">${letters[optIndex]}</span>
+                    <span style="flex: 1;">${option}</span>
+                    ${isCorrect ? '<span class="review-option-check">✓</span>' : ''}
+                </div>
+            `;
+        });
+
+        const explanationHTML = question.explanation ?
+            `<div class="review-explanation-box" id="review-exp-${index}" style="display: none;">
+                <strong>💡 Giải thích:</strong> ${question.explanation}
+            </div>` : '';
+
+        questionDiv.innerHTML = `
+            <div class="review-question-header">
+                <span class="review-question-number">Câu ${index + 1}</span>
+                <button class="toggle-answer-btn" onclick="toggleReviewAnswer(${index})">
+                    👁️ Xem Đáp Án
+                </button>
+            </div>
+            <div class="review-question-text">${question.question}</div>
+            <div class="review-options-list" id="review-opts-${index}" style="display: none;">
+                ${optionsHTML}
+            </div>
+            ${explanationHTML}
+        `;
+
+        container.appendChild(questionDiv);
+    });
+
+    // Update search info
+    document.getElementById('filteredCount').textContent = filteredReviewQuestions.length;
+    document.getElementById('totalCount').textContent = allQuestions.length;
+}
+
+// Toggle hiển thị đáp án trong chế độ ôn tập
+function toggleReviewAnswer(index) {
+    const optionsDiv = document.getElementById(`review-opts-${index}`);
+    const expDiv = document.getElementById(`review-exp-${index}`);
+    const btn = document.querySelector(`#review-q-${index} .toggle-answer-btn`);
+
+    if (optionsDiv.style.display === 'none') {
+        optionsDiv.style.display = 'block';
+        if (expDiv) expDiv.style.display = 'block';
+        btn.innerHTML = '🙈 Ẩn Đáp Án';
+        btn.classList.add('hide');
+    } else {
+        optionsDiv.style.display = 'none';
+        if (expDiv) expDiv.style.display = 'none';
+        btn.innerHTML = '👁️ Xem Đáp Án';
+        btn.classList.remove('hide');
+    }
+}
+
+// Tìm kiếm câu hỏi trong chế độ ôn tập
+function filterReviewQuestions() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    if (searchTerm === '') {
+        filteredReviewQuestions = [...allQuestions];
+    } else {
+        filteredReviewQuestions = allQuestions.filter(q =>
+            q.question.toLowerCase().includes(searchTerm) ||
+            q.options.some(opt => opt.toLowerCase().includes(searchTerm))
+        );
+    }
+
+    displayReviewQuestions();
+}
+
+// Xóa tìm kiếm
+function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    filterReviewQuestions();
+}
+
+// Bắt đầu chế độ kiểm tra
+function startQuizMode() {
+    document.getElementById('modeSelectionScreen').classList.add('hidden');
+    document.getElementById('reviewScreen').classList.add('hidden');
+    document.getElementById('startScreen').classList.remove('hidden');
+
+    // Update start screen with subject info
+    document.getElementById('selectedSubjectName').textContent =
+        `📚 ${currentDatabase.quizMetadata.subject}`;
+
+    const totalQuestions = allQuestions.length;
+    document.getElementById('selectedSubjectDetails').textContent =
+        `${totalQuestions} câu hỏi • ${currentDatabase.quizMetadata.totalExams} đề thi`;
+
+    // Set default time limit from database
+    document.getElementById('timeLimit').value = currentDatabase.quizMetadata.timeLimit;
+    document.getElementById('numQuestions').max = totalQuestions;
+    document.getElementById('numQuestions').value = Math.min(20, totalQuestions);
 }
 
 // Khởi tạo - loại bỏ câu trùng
@@ -1939,8 +2078,6 @@ function shuffleArray(array) {
 
 // Bắt đầu quiz
 function startQuiz() {
-    initializeQuestions();
-
     const numQuestions = parseInt(document.getElementById('numQuestions').value);
     const timeLimit = parseInt(document.getElementById('timeLimit').value);
 
@@ -1958,8 +2095,8 @@ function startQuiz() {
     totalTimeInSeconds = timeLimit * 60;
     startTime = Date.now();
 
-    document.getElementById('startScreen').style.display = 'none';
-    document.getElementById('quizScreen').style.display = 'block';
+    document.getElementById('startScreen').classList.add('hidden');
+    document.getElementById('quizScreen').classList.remove('hidden');
     document.getElementById('totalQuestions').textContent = numQuestions;
 
     displayQuestion();
@@ -1986,9 +2123,9 @@ function displayQuestion() {
         }
 
         optionDiv.innerHTML = `
-                    <div class="option-letter">${letters[index]}</div>
-                    <div>${option}</div>
-                `;
+            <div class="option-letter">${letters[index]}</div>
+            <div>${option}</div>
+        `;
 
         optionDiv.onclick = () => selectOption(index);
         optionsContainer.appendChild(optionDiv);
@@ -2079,8 +2216,8 @@ function finishQuiz() {
     const seconds = timeUsed % 60;
 
     // Hiển thị kết quả
-    document.getElementById('quizScreen').style.display = 'none';
-    document.getElementById('resultScreen').style.display = 'block';
+    document.getElementById('quizScreen').classList.add('hidden');
+    document.getElementById('resultScreen').classList.remove('hidden');
 
     document.getElementById('scoreDisplay').textContent = score + '%';
     document.getElementById('correctCount').textContent = correctCount;
@@ -2135,32 +2272,32 @@ function displayReview() {
             }
 
             optionsHTML += `
-                        <div class="${optionClass}">
-                            ${icon ? `<span class="review-option-icon">${icon}</span>` : '<span class="review-option-icon"></span>'}
-                            <strong>${letters[optIndex]}.</strong> ${option}
-                        </div>
-                    `;
+                <div class="${optionClass}">
+                    ${icon ? `<span class="review-option-icon">${icon}</span>` : '<span class="review-option-icon"></span>'}
+                    <strong>${letters[optIndex]}.</strong> ${option}
+                </div>
+            `;
         });
 
         // Hiển thị giải thích nếu có
         const explanationHTML = question.explanation ?
             `<div class="review-explanation">
-                        <strong>💡 Giải thích:</strong> ${question.explanation}
-                    </div>` : '';
+                <strong>💡 Giải thích:</strong> ${question.explanation}
+            </div>` : '';
 
         reviewDiv.innerHTML = `
-                    <div class="review-header">
-                        <span class="review-number">Câu ${index + 1}</span>
-                        <span class="review-status ${isCorrect ? 'correct' : 'incorrect'}">
-                            ${isCorrect ? '✓ Đúng' : '✗ Sai'}
-                        </span>
-                    </div>
-                    <div class="review-question-text">${question.question}</div>
-                    <div class="review-options">
-                        ${optionsHTML}
-                    </div>
-                    ${explanationHTML}
-                `;
+            <div class="review-header">
+                <span class="review-number">Câu ${index + 1}</span>
+                <span class="review-status ${isCorrect ? 'correct' : 'incorrect'}">
+                    ${isCorrect ? '✓ Đúng' : '✗ Sai'}
+                </span>
+            </div>
+            <div class="review-question-text">${question.question}</div>
+            <div class="review-options">
+                ${optionsHTML}
+            </div>
+            ${explanationHTML}
+        `;
 
         reviewContainer.appendChild(reviewDiv);
     });
@@ -2168,8 +2305,8 @@ function displayReview() {
 
 // Làm lại quiz
 function restartQuiz() {
-    document.getElementById('resultScreen').style.display = 'none';
-    document.getElementById('startScreen').style.display = 'block';
+    document.getElementById('resultScreen').classList.add('hidden');
+    document.getElementById('startScreen').classList.remove('hidden');
 }
 
 // Khởi tạo khi tải trang
