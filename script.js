@@ -950,7 +950,7 @@ const DATABASES = {
                         "id": 19,
                         "question": "Bài tập nào dưới đây để phát triển sức mạnh?",
                         "options": ["Bơi 100 – 200m", "Chạy 100 – 200m", "Chạy 30 – 80m", "Chèo thuyền 100 – 200m"],
-                        "correctAnswer": 0,
+                        "correctAnswer": 1,
                         "explanation": ""
                     },
                     {
