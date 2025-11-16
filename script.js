@@ -936,7 +936,7 @@ const DATABASES = {
                             "Giai đoạn hình thành phản xạ có điều kiện + A",
                             "Giai đoạn hình thành phản xạ có điều kiện + B"
                         ],
-                        "correctAnswer": 3,
+                        "correctAnswer": 1,
                         "explanation": ""
                     },
                     {
