@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     color: #e2e8f0;
     padding: 20px;
+    padding-bottom: 80px;
 }
 
 .container {
@@ -37,7 +38,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Subject Selection Screen */
 .subject-selection-screen {
     background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(10px);
@@ -129,7 +129,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* Mode Selection Screen */
 .mode-selection-screen {
     background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(10px);
@@ -218,7 +217,6 @@ body {
     line-height: 1.8;
 }
 
-/* Review Screen */
 .review-screen {
     animation: fadeIn 0.6s ease;
 }
@@ -858,6 +856,37 @@ body {
 .result-actions {
     text-align: center;
     margin-top: 30px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    padding: 15px 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.footer p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: #a78bfa;
+    text-decoration: underline;
 }
 
 @keyframes fadeIn {

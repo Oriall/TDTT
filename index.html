@@ -17,21 +17,17 @@
             <p>Chọn môn học và kiểm tra kiến thức của bạn</p>
         </div>
 
-        <!-- Subject Selection Screen -->
         <div class="subject-selection-screen" id="subjectSelectionScreen">
             <h2>Chọn môn học của bạn</h2>
             <p>Vui lòng chọn một môn học để bắt đầu</p>
 
-            <div class="subject-cards" id="subjectCards">
-                <!-- Subject cards will be generated dynamically -->
-            </div>
+            <div class="subject-cards" id="subjectCards"></div>
 
             <button class="btn btn-primary" onclick="confirmSubject()" id="confirmSubjectBtn" style="display: none;">
                 Tiếp Theo →
             </button>
         </div>
 
-        <!-- Mode Selection Screen -->
         <div class="mode-selection-screen hidden" id="modeSelectionScreen">
             <div class="selected-subject-info">
                 <h3 id="modeSelectedSubjectName">📚 Môn học đã chọn</h3>
@@ -72,7 +68,6 @@
             </div>
         </div>
 
-        <!-- Review Mode Screen -->
         <div class="review-screen hidden" id="reviewScreen">
             <div class="review-header-section">
                 <h2>📖 Chế Độ Ôn Tập</h2>
@@ -90,9 +85,7 @@
                 </div>
             </div>
 
-            <div class="review-questions-container" id="reviewQuestionsContainer">
-                <!-- Review questions will be generated dynamically -->
-            </div>
+            <div class="review-questions-container" id="reviewQuestionsContainer"></div>
 
             <div class="review-actions">
                 <button class="btn btn-secondary" onclick="backToModeSelection()">← Quay Lại</button>
@@ -100,7 +93,6 @@
             </div>
         </div>
 
-        <!-- Quiz Settings Screen -->
         <div class="start-screen hidden" id="startScreen">
             <div class="selected-subject-info">
                 <h3 id="selectedSubjectName">📚 Môn học đã chọn</h3>
@@ -124,7 +116,6 @@
             </div>
         </div>
 
-        <!-- Quiz Screen -->
         <div class="quiz-screen hidden" id="quizScreen">
             <div class="quiz-header">
                 <div class="progress-info">
@@ -153,7 +144,6 @@
             </div>
         </div>
 
-        <!-- Result Screen -->
         <div class="result-screen hidden" id="resultScreen">
             <div class="result-card">
                 <div class="result-score" id="scoreDisplay"></div>
@@ -180,7 +170,6 @@
                 </div>
             </div>
 
-            <!-- Review Section -->
             <div class="review-section">
                 <h3 class="review-title">📝 Xem Lại Chi Tiết Đáp Án</h3>
                 <div id="reviewContainer"></div>
@@ -188,6 +177,9 @@
         </div>
     </div>
 
+    <footer class="footer">
+        <p>Code tại <a href="https://github.com/oriall" target="_blank">GitHub @oriall</a></p>
+    </footer>
 </body>
 
 </html>

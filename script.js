@@ -1808,7 +1808,6 @@ const DATABASES = {
     }
 }
 // ===== KẾT THÚC DATABASE =====
-
 let selectedSubject = null;
 let currentDatabase = null;
 let allQuestions = [];
@@ -1820,7 +1819,6 @@ let timerInterval;
 let startTime;
 let totalTimeInSeconds;
 
-// Khởi tạo subject cards
 function initializeSubjectCards() {
     const subjectCardsContainer = document.getElementById('subjectCards');
     subjectCardsContainer.innerHTML = '';
@@ -1853,32 +1851,26 @@ function initializeSubjectCards() {
 }
 
 function selectSubject(subjectKey) {
-    // Remove selected class from all cards
     document.querySelectorAll('.subject-card').forEach(card => {
         card.classList.remove('selected');
     });
 
-    // Add selected class to clicked card
     document.getElementById(`card-${subjectKey}`).classList.add('selected');
 
     selectedSubject = subjectKey;
     currentDatabase = DATABASES[subjectKey];
 
-    // Initialize all questions
     initializeQuestions();
 
-    // Show confirm button
     document.getElementById('confirmSubjectBtn').style.display = 'inline-block';
 }
 
-// Xác nhận môn học và chuyển sang màn hình chọn chế độ
 function confirmSubject() {
     if (!selectedSubject) {
         alert('Vui lòng chọn một môn học!');
         return;
     }
 
-    // Update mode selection screen with subject info
     document.getElementById('modeSelectedSubjectName').textContent =
         `📚 ${currentDatabase.quizMetadata.subject}`;
 
@@ -1886,12 +1878,10 @@ function confirmSubject() {
     document.getElementById('modeSelectedSubjectDetails').textContent =
         `${totalQuestions} câu hỏi • ${currentDatabase.quizMetadata.totalExams} đề thi`;
 
-    // Switch screens
     document.getElementById('subjectSelectionScreen').style.display = 'none';
     document.getElementById('modeSelectionScreen').classList.remove('hidden');
 }
 
-// Quay lại chọn môn
 function backToSubjectSelection() {
     selectedSubject = null;
     currentDatabase = null;
@@ -1903,14 +1893,12 @@ function backToSubjectSelection() {
     document.getElementById('reviewScreen').classList.add('hidden');
     document.getElementById('subjectSelectionScreen').style.display = 'block';
 
-    // Reset selection
     document.querySelectorAll('.subject-card').forEach(card => {
         card.classList.remove('selected');
     });
     document.getElementById('confirmSubjectBtn').style.display = 'none';
 }
 
-// Quay lại chọn chế độ
 function backToModeSelection() {
     document.getElementById('startScreen').classList.add('hidden');
     document.getElementById('reviewScreen').classList.add('hidden');
@@ -1918,21 +1906,17 @@ function backToModeSelection() {
     document.getElementById('modeSelectionScreen').classList.remove('hidden');
 }
 
-// Bắt đầu chế độ ôn tập
 function startReviewMode() {
     document.getElementById('modeSelectionScreen').classList.add('hidden');
     document.getElementById('reviewScreen').classList.remove('hidden');
 
-    // Update review screen info
     document.getElementById('reviewSubjectInfo').textContent =
         `${currentDatabase.quizMetadata.subject} - ${allQuestions.length} câu hỏi`;
 
-    // Display all questions
     filteredReviewQuestions = [...allQuestions];
     displayReviewQuestions();
 }
 
-// Hiển thị câu hỏi ôn tập
 function displayReviewQuestions() {
     const container = document.getElementById('reviewQuestionsContainer');
     container.innerHTML = '';
@@ -1978,12 +1962,10 @@ function displayReviewQuestions() {
         container.appendChild(questionDiv);
     });
 
-    // Update search info
     document.getElementById('filteredCount').textContent = filteredReviewQuestions.length;
     document.getElementById('totalCount').textContent = allQuestions.length;
 }
 
-// Toggle hiển thị đáp án trong chế độ ôn tập
 function toggleReviewAnswer(index) {
     const optionsDiv = document.getElementById(`review-opts-${index}`);
     const expDiv = document.getElementById(`review-exp-${index}`);
@@ -2002,7 +1984,6 @@ function toggleReviewAnswer(index) {
     }
 }
 
-// Tìm kiếm câu hỏi trong chế độ ôn tập
 function filterReviewQuestions() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
 
@@ -2018,19 +1999,16 @@ function filterReviewQuestions() {
     displayReviewQuestions();
 }
 
-// Xóa tìm kiếm
 function clearSearch() {
     document.getElementById('searchInput').value = '';
     filterReviewQuestions();
 }
 
-// Bắt đầu chế độ kiểm tra
 function startQuizMode() {
     document.getElementById('modeSelectionScreen').classList.add('hidden');
     document.getElementById('reviewScreen').classList.add('hidden');
     document.getElementById('startScreen').classList.remove('hidden');
 
-    // Update start screen with subject info
     document.getElementById('selectedSubjectName').textContent =
         `📚 ${currentDatabase.quizMetadata.subject}`;
 
@@ -2038,13 +2016,11 @@ function startQuizMode() {
     document.getElementById('selectedSubjectDetails').textContent =
         `${totalQuestions} câu hỏi • ${currentDatabase.quizMetadata.totalExams} đề thi`;
 
-    // Set default time limit from database
     document.getElementById('timeLimit').value = currentDatabase.quizMetadata.timeLimit;
     document.getElementById('numQuestions').max = totalQuestions;
     document.getElementById('numQuestions').value = Math.min(20, totalQuestions);
 }
 
-// Khởi tạo - loại bỏ câu trùng
 function initializeQuestions() {
     const questionMap = new Map();
 
@@ -2066,7 +2042,6 @@ function initializeQuestions() {
     console.log(`Đã tải ${allQuestions.length} câu hỏi duy nhất`);
 }
 
-// Trộn mảng
 function shuffleArray(array) {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -2076,7 +2051,6 @@ function shuffleArray(array) {
     return newArray;
 }
 
-// Bắt đầu quiz
 function startQuiz() {
     const numQuestions = parseInt(document.getElementById('numQuestions').value);
     const timeLimit = parseInt(document.getElementById('timeLimit').value);
@@ -2086,7 +2060,6 @@ function startQuiz() {
         return;
     }
 
-    // Chọn ngẫu nhiên câu hỏi
     const shuffled = shuffleArray(allQuestions);
     currentQuestions = shuffled.slice(0, numQuestions);
 
@@ -2103,7 +2076,6 @@ function startQuiz() {
     startTimer();
 }
 
-// Hiển thị câu hỏi
 function displayQuestion() {
     const question = currentQuestions[currentQuestionIndex];
 
@@ -2135,7 +2107,6 @@ function displayQuestion() {
     updateNavigationButtons();
 }
 
-// Chọn đáp án
 function selectOption(index) {
     userAnswers[currentQuestionIndex] = index;
 
@@ -2144,13 +2115,11 @@ function selectOption(index) {
     options[index].classList.add('selected');
 }
 
-// Cập nhật progress bar
 function updateProgress() {
     const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
     document.getElementById('progressFill').style.width = progress + '%';
 }
 
-// Cập nhật nút điều hướng
 function updateNavigationButtons() {
     document.getElementById('prevBtn').style.display =
         currentQuestionIndex === 0 ? 'none' : 'block';
@@ -2160,7 +2129,6 @@ function updateNavigationButtons() {
     document.getElementById('finishBtn').classList.toggle('hidden', !isLastQuestion);
 }
 
-// Câu trước
 function previousQuestion() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
@@ -2168,7 +2136,6 @@ function previousQuestion() {
     }
 }
 
-// Câu tiếp
 function nextQuestion() {
     if (currentQuestionIndex < currentQuestions.length - 1) {
         currentQuestionIndex++;
@@ -2176,7 +2143,6 @@ function nextQuestion() {
     }
 }
 
-// Timer
 function startTimer() {
     timerInterval = setInterval(() => {
         const elapsed = Math.floor((Date.now() - startTime) / 1000);
@@ -2195,11 +2161,9 @@ function startTimer() {
     }, 1000);
 }
 
-// Kết thúc quiz
 function finishQuiz() {
     clearInterval(timerInterval);
 
-    // Kiểm tra câu trả lời
     let correctCount = 0;
     currentQuestions.forEach((question, index) => {
         if (userAnswers[index] === question.correctAnswer) {
@@ -2210,12 +2174,10 @@ function finishQuiz() {
     const incorrectCount = currentQuestions.length - correctCount;
     const score = Math.round((correctCount / currentQuestions.length) * 100);
 
-    // Tính thời gian đã dùng
     const timeUsed = Math.floor((Date.now() - startTime) / 1000);
     const minutes = Math.floor(timeUsed / 60);
     const seconds = timeUsed % 60;
 
-    // Hiển thị kết quả
     document.getElementById('quizScreen').classList.add('hidden');
     document.getElementById('resultScreen').classList.remove('hidden');
 
@@ -2224,8 +2186,7 @@ function finishQuiz() {
     document.getElementById('incorrectCount').textContent = incorrectCount;
     document.getElementById('timeTaken').textContent =
         `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-    // Thông điệp kết quả
+    
     let message = '';
     if (score >= 90) message = '🎉 Xuất sắc! Bạn đã làm rất tốt!';
     else if (score >= 80) message = '👏 Tốt lắm! Tiếp tục phát huy!';
@@ -2235,11 +2196,9 @@ function finishQuiz() {
 
     document.getElementById('resultMessage').textContent = message;
 
-    // Hiển thị phần review
     displayReview();
 }
 
-// Hiển thị chi tiết review
 function displayReview() {
     const reviewContainer = document.getElementById('reviewContainer');
     reviewContainer.innerHTML = '';
@@ -2253,19 +2212,16 @@ function displayReview() {
         const reviewDiv = document.createElement('div');
         reviewDiv.className = `review-question ${isCorrect ? 'correct-answer' : 'incorrect-answer'}`;
 
-        // Tạo HTML cho các options
         let optionsHTML = '';
         question.options.forEach((option, optIndex) => {
             let optionClass = 'review-option';
             let icon = '';
 
-            // Đánh dấu đáp án đúng
             if (optIndex === question.correctAnswer) {
                 optionClass += ' correct-option';
                 icon = '✓';
             }
 
-            // Đánh dấu đáp án sai của user
             if (optIndex === userAnswer && userAnswer !== question.correctAnswer) {
                 optionClass += ' wrong-option';
                 icon = '✗';
@@ -2279,7 +2235,6 @@ function displayReview() {
             `;
         });
 
-        // Hiển thị giải thích nếu có
         const explanationHTML = question.explanation ?
             `<div class="review-explanation">
                 <strong>💡 Giải thích:</strong> ${question.explanation}
@@ -2303,13 +2258,11 @@ function displayReview() {
     });
 }
 
-// Làm lại quiz
 function restartQuiz() {
     document.getElementById('resultScreen').classList.add('hidden');
     document.getElementById('startScreen').classList.remove('hidden');
 }
 
-// Khởi tạo khi tải trang
 window.onload = function () {
     initializeSubjectCards();
 };
