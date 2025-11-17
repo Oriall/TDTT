@@ -1805,6 +1805,633 @@ const DATABASES = {
                 ]
             }
         ]
+    },
+    subject4: {
+        "quizMetadata": {
+            "subject": "Kỹ năng mềm và Tinh thần khởi nghiệp",
+            "timeLimit": 45,
+            "totalExams": 7
+        },
+        "exams": [
+            {
+                "examId": 1,
+                "examName": "CHƯƠNG 1: KỸ NĂNG HỌC TẬP Ở ĐẠI HỌC",
+                "questions": [
+                    {
+                        "id": 1,
+                        "question": "ASK là mô hình yêu cầu về thái độ, kỹ năng, kiến thức của ngành nghề mình đang theo đuổi, trong đó 'kiến thức' được hiểu là:",
+                        "options": [
+                            "Năng lực tư duy, sự hiểu biết mà cá nhân có được sau khi trải qua quá trình giáo dục - đào tạo, đọc hiểu, phân tích và ứng dụng",
+                            "Cách cá nhân tiếp nhận và phản ứng lại với thực tế, đồng thời thể hiện thái độ và động cơ với công việc",
+                            "Khả năng biến kiến thức có được thành hành động cụ thể, hành vi thực tế trong quá trình làm việc của cá nhân",
+                            "Khả năng bắt chước, vận dụng sáng tạo trong công việc và năng lực phân tích, tổng hợp và đánh giá"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Trong mô hình ASK, kiến thức là năng lực tư duy, sự hiểu biết mà cá nhân có được sau khi trải qua quá trình giáo dục - đào tạo, đọc hiểu, phân tích và ứng dụng."
+                    },
+                    {
+                        "id": 2,
+                        "question": "'Lập kế hoạch học tập chi tiết cũng như kế hoạch đọc các tài liệu cho môn học và phát triển bản thân' là những việc sinh viên cần làm trong giai đoạn nào của phương pháp học tập POWER?",
+                        "options": [
+                            "Tổ chức",
+                            "Chuẩn bị sửa soạn",
+                            "Làm việc",
+                            "Đánh giá"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Giai đoạn 'Organize' (Tổ chức) trong phương pháp POWER là khi sinh viên lập kế hoạch học tập chi tiết và kế hoạch đọc các tài liệu."
+                    },
+                    {
+                        "id": 3,
+                        "question": "Theo phương pháp ghi chép Cornell, phần trên của trang giấy dùng để làm gì?",
+                        "options": [
+                            "Ghi lại những ý chính, phần cần chú ý, mở rộng chủ đề của bài học",
+                            "Viết phần tóm tắt",
+                            "Ghi mô tả chi tiết và những phần được giải thích đầy đủ",
+                            "Ghi chép chi tiết trong khi đọc, phần này có thể là sơ đồ, biểu đồ và ngày tháng"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Theo phương pháp Cornell, phần trên cùng của trang giấy dùng để ghi tên bài học, ngày tháng và các thông tin nhận dạng cơ bản."
+                    },
+                    {
+                        "id": 4,
+                        "question": "Nguyên tắc quan trọng nhất khi học tập nhóm là gì?",
+                        "options": [
+                            "Hiệu quả",
+                            "Tôn trọng",
+                            "Đúng giờ",
+                            "Hợp tác"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Nguyên tắc quan trọng nhất khi học tập nhóm là tôn trọng các thành viên trong nhóm."
+                    }
+                ]
+            },
+            {
+                "examId": 2,
+                "examName": "CHƯƠNG 2: KHÁI QUÁT CHUNG VỀ GIAO TIẾP",
+                "questions": [
+                    {
+                        "id": 5,
+                        "question": "Hình thức giao tiếp có ưu điểm thông tin truyền - nhận nhanh chóng, có độ chính xác, tin cậy cao là hình thức giao tiếp nào?",
+                        "options": [
+                            "Giao tiếp trực tiếp",
+                            "Giao tiếp gián tiếp",
+                            "Giao tiếp cá nhân với cá nhân",
+                            "Giao tiếp nhóm với nhóm"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Giao tiếp trực tiếp có ưu điểm là thông tin truyền - nhận nhanh chóng, có độ chính xác, tin cậy cao."
+                    },
+                    {
+                        "id": 6,
+                        "question": "Giao tiếp gián tiếp có ưu điểm gì?",
+                        "options": [
+                            "Không bị giới hạn bởi không gian, thời gian",
+                            "Có thể trao đổi thông tin một cách linh hoạt",
+                            "Thông tin chính xác tuyệt đối",
+                            "Quá trình trao đổi thông tin diễn ra một cách nhanh"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Ưu điểm chính của giao tiếp gián tiếp là không bị giới hạn bởi không gian và thời gian."
+                    },
+                    {
+                        "id": 7,
+                        "question": "Nhận định nào dưới đây chưa đúng?",
+                        "options": [
+                            "Mối quan hệ tốt đẹp trong môi trường làm việc giúp mọi thành viên đều đạt được sự cân bằng trong công việc và cuộc sống",
+                            "Xây dựng mối quan hệ tốt đẹp trong môi trường làm việc sẽ giúp các thành viên giảm stress do áp lực công việc",
+                            "Các thành viên trong doanh nghiệp có mối quan hệ tốt đẹp với nhau sẽ góp phần thúc đẩy sự phát triển của doanh nghiệp",
+                            "Các thành viên trong doanh nghiệp có mối quan hệ tốt đẹp với nhau sẽ tạo được sự đồng thuận, hứng khởi trong công việc"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phương án A chưa đúng vì mối quan hệ tốt đẹp không tự động đảm bảo sự cân bằng hoàn hảo giữa công việc và cuộc sống cho mọi người."
+                    },
+                    {
+                        "id": 8,
+                        "question": "Tìm phương án sai. Các đồng nghiệp nên xây dựng môi trường làm việc thân thiện, hiệu quả bằng cách:",
+                        "options": [
+                            "Phát huy tối đa tính cách và sở thích cá nhân",
+                            "Chia sẻ kinh nghiệm, bài học của bản thân",
+                            "Hỗ trợ nhau thực hiện công việc được giao",
+                            "Phát triển các kỹ năng làm việc theo nhóm"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phát huy tối đa tính cách và sở thích cá nhân có thể gây xung đột và không phải lúc nào cũng phù hợp với môi trường làm việc tập thể."
+                    },
+                    {
+                        "id": 9,
+                        "question": "Chị Hằng được bổ nhiệm quản lý một dự án nhỏ. Chị luôn lắng nghe ý kiến của các thành viên nên được các thành viên quý mến. Chị Hằng có phong cách lãnh đạo nào?",
+                        "options": [
+                            "Phong cách dân chủ",
+                            "Phong cách độc đoán",
+                            "Phong cách tự do",
+                            "Cả ba phong cách trên"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Việc luôn lắng nghe ý kiến của các thành viên thể hiện phong cách lãnh đạo dân chủ."
+                    },
+                    {
+                        "id": 10,
+                        "question": "Người có phong cách giao tiếp Dân chủ cần lưu ý điều gì?",
+                        "options": [
+                            "Không để xóa nhoà ranh giới các mối quan hệ",
+                            "Không phán xét người khác từ cái bên ngoài",
+                            "Không dồn ép đối tượng",
+                            "Không phủ nhận ý kiến người khác"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Người có phong cách dân chủ cần lưu ý không để xóa nhòa ranh giới các mối quan hệ để giữ được sự chuyên nghiệp."
+                    },
+                    {
+                        "id": 11,
+                        "question": "Nguyên nhân chủ quan dẫn đến giao tiếp không hiệu quả là:",
+                        "options": [
+                            "Không làm chủ được cảm xúc",
+                            "Đối tượng không thiện chí",
+                            "Bất đồng ngôn ngữ",
+                            "Môi trường không thuận lợi"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Không làm chủ được cảm xúc là nguyên nhân chủ quan dẫn đến giao tiếp không hiệu quả."
+                    }
+                ]
+            },
+            {
+                "examId": 3,
+                "examName": "CHƯƠNG 3: KỸ NĂNG GIAO TIẾP BẰNG NGÔN NGỮ NÓI",
+                "questions": [
+                    {
+                        "id": 12,
+                        "question": "Để khởi đầu thuận lợi ở môi trường làm việc mới, điều quan trọng nhất là:",
+                        "options": [
+                            "Biết rõ những người cùng làm mong muốn gì ở mình",
+                            "Thực hiện những công việc đồng nghiệp yêu cầu",
+                            "Cố gắng tạo dựng một quan hệ tin cậy với cấp trên",
+                            "Biết những người đã làm lâu năm ở đó cảm nhận về môi trường làm việc này như thế nào"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Tạo dựng quan hệ tin cậy với cấp trên là điều quan trọng nhất để khởi đầu thuận lợi ở môi trường làm việc mới."
+                    },
+                    {
+                        "id": 13,
+                        "question": "Người bắt tay chủ động để lòng bàn tay hướng xuống hoặc lắc thật mạnh thể hiện điều gì?",
+                        "options": [
+                            "Thể hiện quyền lực, có xu hướng chi phối người khác",
+                            "Thể hiện sự coi trọng, bình đẳng trong giao tiếp",
+                            "Thể hiện sự khiêm nhường",
+                            "Thể hiện sự rụt rè, không tự tin trước người đối diện"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Kiểu bắt tay này thể hiện quyền lực và xu hướng chi phối người khác."
+                    },
+                    {
+                        "id": 14,
+                        "question": "'Chăm chú nghe nhưng không hiểu nội dung, thỉnh thoảng có những cử chỉ đi ngược lại với nội dung người nói' là biểu hiện của cấp độ nghe nào?",
+                        "options": [
+                            "Nghe giả vờ",
+                            "Không nghe",
+                            "Nghe có chọn lọc",
+                            "Nghe chăm chú"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Đây là đặc điểm của cấp độ 'Nghe giả vờ' - chăm chú nghe nhưng không hiểu nội dung."
+                    },
+                    {
+                        "id": 15,
+                        "question": "Theo D. Toring Ton (1994), có bao nhiêu phần trăm thông tin truyền đạt không được chú ý, bị hiểu sai và bị lãng quên nhanh chóng?",
+                        "options": [
+                            "75%",
+                            "45%",
+                            "55%",
+                            "85%"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Theo D. Toring Ton (1994), 75% thông tin truyền đạt không được chú ý, bị hiểu sai và bị lãng quên nhanh chóng."
+                    },
+                    {
+                        "id": 16,
+                        "question": "Đáp án nào sau đây thể hiện chính xác nhất quy trình lắng nghe trong giao tiếp?",
+                        "options": [
+                            "Chuẩn bị - Tập trung - Tham dự - Hiểu - Ghi nhớ - Hồi đáp",
+                            "Chuẩn bị - Tập trung - Hiểu - Phát triển - Ghi nhớ - Hồi đáp",
+                            "Tập trung - Quan sát - Hiểu - Hồi đáp - Tham dự - Phát triển",
+                            "Tập trung - Tham dự - Hiểu - Ghi nhớ - Hồi đáp - Phát triển"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Quy trình lắng nghe gồm 6 giai đoạn: Chuẩn bị - Tập trung - Tham dự - Hiểu - Ghi nhớ - Hồi đáp."
+                    },
+                    {
+                        "id": 17,
+                        "question": "Khi được lắng nghe, người nói sẽ:",
+                        "options": [
+                            "Thoả mãn nhu cầu được chia sẻ",
+                            "Thu thập được nhiều thông tin",
+                            "Chiếm được thiện cảm của đối tác",
+                            "Hiểu vấn đề một cách tốt nhất"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Khi được lắng nghe, người nói sẽ thoả mãn nhu cầu được chia sẻ và được tôn trọng."
+                    },
+                    {
+                        "id": 18,
+                        "question": "Đối với người đưa phản hồi thì phản hồi có ý nghĩa:",
+                        "options": [
+                            "Thay đổi cách tiếp nhận và áp dụng thông tin",
+                            "Đánh giá, thay đổi cách phản hồi của mình",
+                            "Nhận ra điểm mạnh và điểm yếu của mình",
+                            "Điều chỉnh thái độ, hành vi của mình"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Đối với người đưa phản hồi, phản hồi giúp thay đổi cách tiếp nhận và áp dụng thông tin."
+                    },
+                    {
+                        "id": 19,
+                        "question": "Có những nguyên tắc đưa phản hồi nào?",
+                        "options": [
+                            "Đưa điểm mạnh trước và điểm cần cải thiện sau, khách quan, cụ thể, xây dựng, chọn thời điểm thích hợp",
+                            "Chọn thời điểm phù hợp, không áp đặt, không phán xét, nói chung chung, nói điểm mạnh trước và điểm cần cải thiện sau",
+                            "Khách quan, xây dựng, nói điểm mạnh trước và điểm cần cải thiện sau, tôn trọng, chân thành",
+                            "Nói điểm cần cải thiện trước và điểm cần cải thiện sau, chọn thời điểm thích hợp, không áp đặt, cụ thể, nói chung chung"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Nguyên tắc đưa phản hồi gồm: đưa điểm mạnh trước, khách quan, cụ thể, xây dựng, chọn thời điểm thích hợp."
+                    },
+                    {
+                        "id": 20,
+                        "question": "Yếu tố nào sau đây không thuộc phần chuẩn bị nội dung cuộc gọi?",
+                        "options": [
+                            "Hình dung cảm xúc của người nói chuyện",
+                            "Chuẩn bị giấy bút ghi lại các thông tin trong khi trao đổi",
+                            "Chuẩn bị trước những câu trả lời",
+                            "Viết nội dung cuộc gọi ra giấy"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Hình dung cảm xúc của người nói chuyện không phải là phần chuẩn bị nội dung cuộc gọi mà là kỹ năng trong quá trình giao tiếp."
+                    }
+                ]
+            },
+            {
+                "examId": 4,
+                "examName": "CHƯƠNG 4: KỸ NĂNG GIAO TIẾP BẰNG NGÔN NGỮ VIẾT",
+                "questions": [
+                    {
+                        "id": 21,
+                        "question": "Giao tiếp bằng văn bản phù hợp hơn giao tiếp trực tiếp trong trường hợp nào?",
+                        "options": [
+                            "Khi không thể nói chuyện trực tiếp với ai đó và cần trình bày những ý tưởng phức tạp",
+                            "Khi bạn muốn nhanh chóng nhận được ý kiến trả lời về một vấn đề",
+                            "Khi bạn muốn trình bày một ý tưởng phức tạp",
+                            "Khi bạn muốn đưa ra nhiều câu hỏi"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Giao tiếp bằng văn bản phù hợp khi không thể nói chuyện trực tiếp và cần trình bày những ý tưởng phức tạp."
+                    },
+                    {
+                        "id": 22,
+                        "question": "Ưu điểm của việc sử dụng hình thức giao tiếp bằng thư điện tử là:",
+                        "options": [
+                            "Tiết kiệm thời gian của cả người gửi và người nhận",
+                            "Thể hiện sự tôn trọng đối tượng giao tiếp",
+                            "Truyền đạt thông tin chính xác",
+                            "Có tính thuyết phục cao"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Ưu điểm chính của email là tiết kiệm thời gian của cả người gửi và người nhận."
+                    },
+                    {
+                        "id": 23,
+                        "question": "Người soạn email nên nhập địa chỉ email của người nhận vào thời điểm nào?",
+                        "options": [
+                            "Sau khi email đã được soạn hoàn chỉnh",
+                            "Ngay khi bắt đầu viết email",
+                            "Có thể nhập email người nhận bất cứ khi nào trong khi soạn email",
+                            "Khi chỉnh sửa nội dung email"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Nên nhập địa chỉ email người nhận sau khi đã soạn và kiểm tra xong toàn bộ nội dung để tránh gửi nhầm hoặc gửi email chưa hoàn chỉnh."
+                    },
+                    {
+                        "id": 24,
+                        "question": "Tiêu chí để đánh giá báo cáo là:",
+                        "options": [
+                            "Báo cáo cần đảm bảo về nội dung, hình thức và tiến độ, thời gian",
+                            "Báo cáo cần đảm bảo thông tin chính xác",
+                            "Báo cáo cần trình bày đúng theo tiêu chuẩn chung báo cáo",
+                            "Báo cáo chỉ cần quan tâm đến kết quả hoạt động của một cá nhân, cơ quan, tổ chức trong một thời gian nhất định không cần quan tâm đến quá trình đạt được kết quả đó"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Tiêu chí đánh giá báo cáo tốt bao gồm đáp ứng cả 3 yêu cầu về nội dung, hình thức và tiến độ, thời gian."
+                    },
+                    {
+                        "id": 25,
+                        "question": "Đáp án nào dưới đây không đề cập yêu cầu về nội dung của báo cáo?",
+                        "options": [
+                            "Báo cáo được trình bày sạch sẽ, không có lỗi chính tả hay lỗi kĩ thuật máy tính",
+                            "Chỉ ra những bài học kinh nghiệm xác đáng, không chung chung",
+                            "Thông tin đưa ra phải đầy đủ, trung thực, khách quan và chính xác",
+                            "Xây dựng phương hướng, nhiệm vụ cho thời gian tới một cách mạch lạc và có căn cứ, phù hợp với điều kiện thời gian và nguồn lực thực tế, có tính khả thi cao"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phương án A đề cập đến yêu cầu về hình thức, không phải về nội dung của báo cáo."
+                    },
+                    {
+                        "id": 26,
+                        "question": "'Tác giả phải trả lời câu hỏi: Phát hiện chính là gì? Những phát hiện này có nghĩa gì?' thuộc nội dung nào trong bài báo khoa học?",
+                        "options": [
+                            "Thảo luận",
+                            "Kết quả",
+                            "Tóm tắt",
+                            "Giới thiệu"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Câu hỏi này thuộc phần Thảo luận trong bài báo khoa học, nơi tác giả giải thích ý nghĩa của các phát hiện."
+                    },
+                    {
+                        "id": 27,
+                        "question": "Đề tài nghiên cứu khoa học khắc phục được hạn chế của các đề tài đã nghiên cứu trước. Đề tài đạt tính mới nào?",
+                        "options": [
+                            "Mới về nội dung",
+                            "Mới về hình thức",
+                            "Mới về lĩnh vực",
+                            "Mới về địa lý"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Khi đề tài khắc phục được hạn chế của các đề tài trước, đề tài đạt tính mới về nội dung."
+                    },
+                    {
+                        "id": 28,
+                        "question": "Nội dung của phần mở đầu trong nghiên cứu khoa học bao gồm:",
+                        "options": [
+                            "Lý do chọn đề tài, Mục đích nghiên cứu, Khách thể và đối tượng nghiên cứu, Giả thuyết khoa học, Nhiệm vụ nghiên cứu, Phạm vi nghiên cứu, Phương pháp nghiên cứu, Cấu trúc của đề tài",
+                            "Tổng quan nghiên cứu, Mục tiêu nghiên cứu, Cơ sở lý luận, Phương pháp nghiên cứu, Giải pháp và kiến nghị",
+                            "Lý do chọn đề tài, Tổng quan nghiên cứu, Mục tiêu nghiên cứu của đề tài, Kết quả nghiên cứu",
+                            "Lý do chọn đề tài, Tổng quan nghiên cứu, Mục tiêu nghiên cứu, Cơ sở lý luận, Phương pháp nghiên cứu, Giải pháp và kiến nghị"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phần mở đầu trong nghiên cứu khoa học bao gồm đầy đủ các nội dung như lý do chọn đề tài, mục đích, đối tượng, phương pháp nghiên cứu, v.v."
+                    }
+                ]
+            },
+            {
+                "examId": 5,
+                "examName": "CHƯƠNG 5: GIỚI THIỆU VỀ THUYẾT TRÌNH",
+                "questions": [
+                    {
+                        "id": 29,
+                        "question": "Thu thập thông tin tư liệu cho bài thuyết trình là công việc cần thực hiện trong giai đoạn nào?",
+                        "options": [
+                            "Giai đoạn chuẩn bị thuyết trình",
+                            "Giai đoạn tiến hành thuyết trình",
+                            "Giai đoạn kết thúc thuyết trình",
+                            "Giai đoạn chọn chủ đề cho bài thuyết trình"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Thu thập thông tin tư liệu là công việc thuộc giai đoạn chuẩn bị thuyết trình."
+                    },
+                    {
+                        "id": 30,
+                        "question": "Nhận định nào không chính xác khi nói về cách xây dựng đề cương cho bài thuyết trình?",
+                        "options": [
+                            "Một bài thuyết trình có đủ cả ba phần mở đầu, thân bài, kết thúc là đủ để đảm bảo thành công",
+                            "Để bài thuyết trình thành công, cần phân bổ thời gian thuyết trình hợp lý cho cả ba phần mở đầu, thân bài, kết thúc",
+                            "Đảm bảo thời lượng đủ cho việc truyền tải thông tin ở cả 3 phần mở đầu, thân bài, kết thúc là điều cần thiết cho thành công của bài thuyết trình",
+                            "Một bài thuyết trình thành công thì cần thiết phải có đủ cả ba phần mở đầu, thân bài, kết thúc"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Chỉ có đủ ba phần chưa đủ để đảm bảo thành công, cần phải có chất lượng nội dung và cách trình bày phù hợp."
+                    },
+                    {
+                        "id": 31,
+                        "question": "Khi người thuyết trình giới thiệu ngay vào chủ đề và nội dung bài thuyết trình, đây là cách dẫn nhập:",
+                        "options": [
+                            "Trực tiếp",
+                            "Trích dẫn",
+                            "Đặt câu hỏi",
+                            "Tương phản"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Cách dẫn nhập trực tiếp là nêu thẳng chủ đề, mục đích bài thuyết trình ngay từ đầu."
+                    },
+                    {
+                        "id": 32,
+                        "question": "Mở đầu bài thuyết trình, người thuyết trình bắt đầu bằng việc nhấn mạnh một mâu thuẫn nào đó rồi dẫn dắt người nghe đến với chủ đề của bài thuyết trình, đây là cách mở đầu:",
+                        "options": [
+                            "Tương phản",
+                            "Trực tiếp",
+                            "Gây chấn động",
+                            "Trích dẫn"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Cách mở đầu tương phản là nhấn mạnh một mâu thuẫn để gây sự chú ý và dẫn dắt đến chủ đề."
+                    }
+                ]
+            },
+            {
+                "examId": 6,
+                "examName": "CHƯƠNG 6: CÁC KỸ NĂNG TRONG THUYẾT TRÌNH",
+                "questions": [
+                    {
+                        "id": 33,
+                        "question": "Nhận định nào đúng khi nói về việc sử dụng phi ngôn ngữ trong thuyết trình?",
+                        "options": [
+                            "Người thuyết trình không thể thành công nếu không vận dụng tốt các phương thức giao tiếp phi ngôn ngữ",
+                            "Chỉ cần sử dụng phương thức giao tiếp bằng ngôn ngữ chứ không sử dụng phương thức giao tiếp phi ngôn ngữ",
+                            "Không cần chú trọng đến phương thức giao tiếp phi ngôn ngữ trong khi thuyết trình",
+                            "Không chú ý đến phương thức giao tiếp phi ngôn ngữ thì người thuyết trình mới có thể thành công"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phi ngôn ngữ chiếm 93% sức mạnh thông điệp, do đó người thuyết trình cần vận dụng tốt các phương thức này."
+                    },
+                    {
+                        "id": 34,
+                        "question": "Khi sử dụng ngôn ngữ nói trong buổi thuyết trình, chúng ta cần lưu ý điều gì?",
+                        "options": [
+                            "Phát âm rõ ràng mạch lạc để khán giả tiếp nhận thông tin một cách dễ dàng",
+                            "Nói nhanh để đảm bảo thời gian",
+                            "Thường xuyên lặp lại một từ nhiều lần để khán giả hiểu vấn đề",
+                            "Giữ âm lượng to trong suốt bài thuyết trình để khán giả chú ý"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phát âm rõ ràng, mạch lạc giúp khán giả dễ dàng tiếp nhận và hiểu thông tin."
+                    },
+                    {
+                        "id": 35,
+                        "question": "Mục đích của trả lời câu hỏi trong thuyết trình:",
+                        "options": [
+                            "Giúp người nghe hiểu sâu sắc hơn vấn đề đang trình bày",
+                            "Giúp khơi gợi sự chú ý và tham gia của khán giả",
+                            "Giúp tạo bầu không khí sôi nổi trong thuyết trình",
+                            "Giúp kiểm soát thời gian trong thuyết trình"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Mục đích chính của việc trả lời câu hỏi là giúp người nghe hiểu sâu sắc hơn vấn đề đang được trình bày."
+                    },
+                    {
+                        "id": 36,
+                        "question": "Tìm phương án đúng. Các cấp độ câu hỏi của Bloom năm 1956:",
+                        "options": [
+                            "Nhắc lại, hiểu, áp dụng, phân tích, tổng hợp, đánh giá",
+                            "Nhắc lại, hiểu, ghi nhớ, phân tích, tổng hợp, đánh giá",
+                            "Nhắc lại, hiểu, áp dụng, phân tích, tổng hợp, sáng tạo",
+                            "Nhắc lại, ghi nhớ, vận dụng, phân tích, tổng hợp sáng tạo"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Các cấp độ câu hỏi của Bloom năm 1956 gồm: Nhắc lại, hiểu, áp dụng, phân tích, tổng hợp, đánh giá."
+                    },
+                    {
+                        "id": 37,
+                        "question": "Theo thang nhận thức của Bloom, câu hỏi 'Mục đích và mục tiêu khác nhau như thế nào?' thuộc cấp độ nào?",
+                        "options": [
+                            "Hiểu",
+                            "Tổng hợp",
+                            "Phân tích",
+                            "Đánh giá"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Câu hỏi về sự khác biệt giữa các khái niệm thuộc cấp độ 'Hiểu' trong thang Bloom."
+                    },
+                    {
+                        "id": 38,
+                        "question": "Nguyên nhân khách quan dẫn đến việc kiểm soát tâm lý chưa tốt trong thuyết trình là:",
+                        "options": [
+                            "Các phương tiện hỗ trợ gặp vấn đề",
+                            "Chưa chuẩn bị tốt cho bài thuyết trình",
+                            "Thể chất và tinh thần không tốt",
+                            "Cảm xúc tiêu cực"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Các phương tiện hỗ trợ gặp vấn đề là nguyên nhân khách quan, các nguyên nhân khác là chủ quan."
+                    },
+                    {
+                        "id": 39,
+                        "question": "Nhận định nào sau đây chưa đúng khi nói về neo cảm xúc?",
+                        "options": [
+                            "Bạn không cần phải hoàn tất quá trình chuyển đổi dáng vẻ điệu bộ và các giác quan nội tại khi bạn thực hiện neo cảm xúc",
+                            "Chính bạn tạo ra cảm xúc của mình và bạn có khả năng sở hữu bất kì trạng thái cảm xúc nào bạn muốn",
+                            "Có thể neo cảm xúc bạn đã có trong quá khứ vào những sự việc xảy ra xung quanh bạn",
+                            "Neo cảm xúc là một trong những cách thức để đạt được trạng thái cảm xúc tích cực"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phương án A chưa đúng vì khi thực hiện neo cảm xúc, bạn cần hoàn tất quá trình chuyển đổi để neo có hiệu quả."
+                    },
+                    {
+                        "id": 40,
+                        "question": "Đối với người nghe, việc sử dụng các phương tiện hỗ trợ trong thuyết trình có vai trò như thế nào?",
+                        "options": [
+                            "Thu hút sự chú ý của người nghe",
+                            "Làm rõ sự so sánh, tạo ra sự liên kết cần thiết",
+                            "Đơn giản hóa các ý tưởng phức tạp",
+                            "Dễ dàng nhớ các ý chính đã trình bày trước đó"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Đối với người nghe, phương tiện hỗ trợ giúp thu hút sự chú ý và giúp họ hình dung, hiểu được nội dung dễ dàng hơn."
+                    },
+                    {
+                        "id": 41,
+                        "question": "Khi sử dụng các thiết bị hỗ trợ trong thuyết trình, người thuyết trình nên:",
+                        "options": [
+                            "Chọn thiết bị phù hợp với mục đích, nội dung, khán giả",
+                            "Sử dụng nhiều hiệu ứng khi thiết kế powerpoint",
+                            "Sử dụng nhiều hình ảnh hỗ trợ cho một nội dung",
+                            "Giải thích cho khán giả tại sao lại dùng thiết bị này"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Người thuyết trình nên chọn thiết bị phù hợp với mục đích, nội dung và đối tượng khán giả."
+                    },
+                    {
+                        "id": 42,
+                        "question": "Mục đích của việc sử dụng biểu đồ, sơ đồ, đồ thị, hình vẽ, bảng biểu, hình ảnh, video clip trong các trang chiếu là gì?",
+                        "options": [
+                            "Để cho khán giả cảm nhận một cách trực quan các ý tưởng của người thuyết trình",
+                            "Làm cho bài thuyết trình chuyên nghiệp hơn",
+                            "Làm cho bài thuyết trình dài hơn",
+                            "Không phải chuẩn bị nhiều nội dung vì đã thể hiện qua các sơ đồ, hình vẽ..."
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Mục đích chính là giúp khán giả cảm nhận trực quan các ý tưởng, giúp họ hiểu và ghi nhớ tốt hơn."
+                    }
+                ]
+            },
+            {
+                "examId": 7,
+                "examName": "CHƯƠNG 7: TINH THẦN KHỞI NGHIỆP",
+                "questions": [
+                    {
+                        "id": 43,
+                        "question": "'Tính kinh tế theo quy mô' được hiểu như thế nào?",
+                        "options": [
+                            "Chi phí giảm khi quy mô sản xuất tăng lên",
+                            "Chi phí thay đổi tuỳ theo phương sai trong sản xuất",
+                            "Chi phí không đổi trong một khoảng thời gian",
+                            "Chi phí giảm bằng cách đầu tư vào những hoạt động liên quan đến sản phẩm chính"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Tính kinh tế theo quy mô là khi chi phí đơn vị giảm xuống khi quy mô sản xuất tăng lên."
+                    },
+                    {
+                        "id": 44,
+                        "question": "'Ý tưởng khởi nghiệp cung cấp sản phẩm, dịch vụ hoàn toàn mới, chưa từng có trên thị trường' đề cập đến đặc trưng nào của ý tưởng khởi nghiệp?",
+                        "options": [
+                            "Tính độc đáo, sáng tạo",
+                            "Tính tiềm năng",
+                            "Tính cần thiết",
+                            "Tính khả thi"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Sản phẩm/dịch vụ hoàn toàn mới thể hiện tính độc đáo và sáng tạo của ý tưởng khởi nghiệp."
+                    },
+                    {
+                        "id": 45,
+                        "question": "'Khởi nghiệp xuất phát từ sự cải tiến hay đổi mới sản phẩm/dịch vụ đã có' là yếu tố nào của ý tưởng khởi nghiệp theo H. Igor Ansoff?",
+                        "options": [
+                            "Một hàng hóa hoặc dịch vụ mới cho một thị trường hiện tại",
+                            "Một hàng hóa hoặc dịch vụ mới cho một thị trường mới",
+                            "Hàng hóa hoặc dịch vụ đang được cung cấp trên thị trường hiện tại",
+                            "Một hàng hóa hoặc dịch vụ cho một thị trường mới"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Cải tiến sản phẩm/dịch vụ đã có tương ứng với việc đưa hàng hóa/dịch vụ mới cho thị trường hiện tại."
+                    },
+                    {
+                        "id": 46,
+                        "question": "'Mô hình kinh doanh đã có từ xưa, cho phép người mua và người bán có thể thấy được các mặt hàng, không vô hình như bán online' là hình thức khởi nghiệp nào?",
+                        "options": [
+                            "Khởi nghiệp bằng mở cửa hàng truyền thống",
+                            "Khởi nghiệp bằng bán buôn, bán sỉ",
+                            "Khởi nghiệp bằng hình thức tư vấn",
+                            "Khởi nghiệp bằng cách tạo giá trị gốc"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Đây là đặc điểm của hình thức khởi nghiệp bằng mở cửa hàng truyền thống."
+                    },
+                    {
+                        "id": 47,
+                        "question": "'Liệt kê và sắp xếp khách hàng theo thứ tự ưu tiên, bao gồm danh sách các khách hàng tiềm năng' là nội dung nào trong mô hình Business Model Canvas?",
+                        "options": [
+                            "Phân khúc khách hàng",
+                            "Kênh phân phối",
+                            "Giải pháp giá trị",
+                            "Quan hệ khách hàng"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Phân khúc khách hàng (Customer Segments) là nội dung liệt kê và sắp xếp khách hàng theo thứ tự ưu tiên."
+                    },
+                    {
+                        "id": 48,
+                        "question": "Phương án nào dưới đây không đúng với mô hình Business Model Canvas?",
+                        "options": [
+                            "Mô hình Business Model Canvas đề cập cụ thể đến các yếu tố bên ngoài hoạt động khởi nghiệp",
+                            "Mô hình Business Model Canvas được thể hiện trên một trang giấy",
+                            "Mô hình Business Model Canvas bao gồm 9 yếu tố ảnh hưởng chính đến khởi nghiệp",
+                            "Quan hệ khách hàng là một trong 9 yếu tố của mô hình Business Model Canvas"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Nhược điểm của Canvas là không đề cập đến các yếu tố bên ngoài hoạt động khởi nghiệp, nên phương án A không đúng."
+                    }
+                ]
+            }
+        ]
     }
 }
 // ===== KẾT THÚC DATABASE =====
@@ -1827,6 +2454,7 @@ function initializeSubjectCards() {
         subject1: '📚',
         subject2: '🧮',
         subject3: '🔬',
+        subject4: '📝',
     };
 
     Object.keys(DATABASES).forEach(subjectKey => {
@@ -2186,7 +2814,7 @@ function finishQuiz() {
     document.getElementById('incorrectCount').textContent = incorrectCount;
     document.getElementById('timeTaken').textContent =
         `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    
+
     let message = '';
     if (score >= 90) message = '🎉 Xuất sắc! Bạn đã làm rất tốt!';
     else if (score >= 80) message = '👏 Tốt lắm! Tiếp tục phát huy!';
